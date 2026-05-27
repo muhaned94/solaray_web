@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "solarcenter.muhanad",
+      "sha256_cert_fingerprints": [
+        "C0:99:E8:37:AC:94:7E:49:BA:FC:A9:E4:C2:4A:6F:4F:AB:55:19:A5:6C:23:FD:3C:53:5A:17:73:99:34:61:5D"
+      ]
+    }
+  }
+]

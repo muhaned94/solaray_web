@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+
+  <title>SolaRay | الطاقة الشمسية في العراق | Solar Center Iraq</title>
+  <meta name="description" content="SolaRay (Solar Center Iraq) - المنصة الرائدة لحلول الطاقة الشمسية في العراق.">
+  <meta name="keywords" content="سولاراي, SolaRay, الطاقة الشمسية في العراق, Solar Center Iraq, طاقة متجددة">
+  <meta name="author" content="SolaRay Iraq">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://Store.solaray-iq.com/">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SolaRay">
+  <meta name="theme-color" content="#0D47A1">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/Icon-512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Store.solaray-iq.com/">
+  <meta property="og:title" content="SolaRay | دليلك الشامل للطاقة الشمسية في العراق">
+  <meta property="og:description" content="تطبيق SolaRay يوفر لك أفضل منظومات الطاقة الشمسية في العراق وبغداد.">
+  <meta property="og:image" content="https://Store.solaray-iq.com/icons/Icon-512.png">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0D47A1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    #loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      justify-content: center;
+      background: #0D47A1;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .dot {
+      width: 52px;
+      height: 52px;
+      background: #FFC107;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out;
+    }
+
+    .brand {
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: scale(0.85); opacity: 0.75; }
+      50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 28px rgba(255,193,7,0.7); }
+    }
+
+    .seo-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="dot"></div>
+    <div class="brand">SolaRay Iraq</div>
+  </div>
+
+  <div class="seo-hidden" role="main">
+    <h1>SolaRay | الطاقة الشمسية في العراق</h1>
+    <p>SolaRay Solar Center Iraq - منصة الطاقة الشمسية الرائدة في العراق وبغداد.</p>
+  </div>
+
+  <script>
+    // Hide loader once Flutter app is ready
+    window._solarayHideLoader = function() {
+      var loader = document.getElementById('loader');
+      if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(function() { loader.remove(); }, 500);
+      }
+    };
+
+    // Hook into Flutter's runApp signal
+    var _origRunApp = null;
+    Object.defineProperty(window, '__flutterAppRunner__', {
+      set: function(v) { _origRunApp = v; }
+    });
+  </script>
+
+  <!-- Flutter bootstrap - handles all initialization including buildConfig -->
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    // Fallback: hide loader after 8 seconds no matter what
+    setTimeout(function() {
+      window._solarayHideLoader && window._solarayHideLoader();
+    }, 8000);
+
+    // Listen for Flutter first frame to hide loader
+    window.addEventListener('flutter-first-frame', function() {
+      window._solarayHideLoader && window._solarayHideLoader();
+    });
+  </script>
+</body>
+</html>

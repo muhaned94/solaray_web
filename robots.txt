@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /vendor/
+Disallow: /complete-profile
+
+Sitemap: https://Store.solaray-iq.com/sitemap.xml
